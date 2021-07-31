@@ -1,0 +1,18 @@
+Sumber : https://wiki.fronetzy.com/cara-mudah-redirect-http-ke-https/
+         https://fronetzy.com
+
+Halo balik lagi dengan mimin nih, Salam sehat selalu ya guys :). Hari ini mimin akan share sedikit Cara Mudah Redirect HTTP ke HTTPS.
+
+Sebagai berikut:
+
+Buka Panel Cpanel / panel lainnya.
+Pergi ke File Manager
+Edit File .htaccess atau bikin file jika file .htaccess tidak ada. catatan : jika Anda adalah pengguna Cpanel dan Anda tidak menemukan file .htaccess, Klik pada setting di kanan atas lalu centang hidden files. Setelah itu silahkan cek apakah file .htaccess sudah muncul. Apabila belum muncul silahkan Anda bikin file .htaccess yang baru.
+Jika sudah Copy dan Paste kan code yang mimin berikan lalu Tambahkan di baris paling atas atau baris terakhir. Code sebagai berikut :
+
+RewriteEngine On
+ 
+RewriteCond %{HTTPS} off
+ 
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
